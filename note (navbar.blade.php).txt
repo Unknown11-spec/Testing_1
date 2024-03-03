@@ -1,0 +1,13 @@
+            @if(!Auth::check())
+                <a href="/login" class="nav-link active text-white">Login</a>
+        	@else
+            <div class="dropdown">
+              <button class="btn text-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{Auth::user()->name}}
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="/logout">Logout</a></li>
+              </ul>
+            </div>
+            @endif
